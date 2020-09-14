@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { Container } from 'reactstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Header from './components/Header';
+import GetPosts from './components/GetPosts';
+
+
+const App = () => (
+  <Fragment>
+  
+    <Header type="home" styleFont="#05abea"/>
+    
+    <main className="my-5 py-5">
+      <Container className="px-0">
+        <GetPosts />
+      </Container>
+    </main>
+    
+  </Fragment>
+);
 
 export default App;
