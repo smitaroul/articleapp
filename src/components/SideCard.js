@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Col } from 'reactstrap';
 import LinesEllipsisLoose from 'react-lines-ellipsis/lib/loose';
-import { LinkContainer } from 'react-router-bootstrap';
+//import { LinkContainer } from 'react-router-bootstrap';
 import { Card, CardImg, CardBody, CardFooter, CardTitle, CardSubtitle } from 'reactstrap';
 
 
@@ -12,8 +12,8 @@ class SideCard extends Component {
         let card = this.props ? this.props.card : {};
         let { author, description, publishedAt, title, urlToImage, source} = card;
         return(
-            <Col xs={6} md={4} tag="aside" className="pb-5 mb-5 pb-md-0 mb-md-0 mx-auto mx-md-0">
-                <LinkContainer to="/article/1234" style={{ cursor: 'pointer' }}>
+            <Col xs={6} md={4} tag="aside" className="Card__Col pb-5 mb-5 pb-md-0 mb-md-0 mx-auto mx-md-0">
+                
                 <Card>
                 <CardImg top width="100%" src={urlToImage} alt="banner" style={{ height: '15em', background: '#ccc' }} />
                 <CardBody>
@@ -25,7 +25,7 @@ class SideCard extends Component {
                 <small className="text-muted">{publishedAt}</small>
                 </CardFooter>
                 </Card>
-                </LinkContainer>
+                
             </Col>
         )
     }

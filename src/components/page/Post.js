@@ -26,7 +26,6 @@ class Post extends Component {
     let articles = posts.status === 'ok' ? posts.articles : [];
     
     let article0 = articles[1];
-    console.log('article0====',article0)
     articleDOM.push(<Article key="test1" data={article0} />)
     return articleDOM;
 }
