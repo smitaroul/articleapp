@@ -8,8 +8,8 @@ import { Card, CardImg, CardBody, CardFooter, CardTitle, CardSubtitle } from 're
 class SideCard extends Component {
 
     render(){
-        
-        let card = this.props ? this.props.card : {};
+        let newprops = this.props || {};
+        let card = newprops.card || {};
         let { author, description, publishedAt, title, urlToImage, source} = card;
         return(
             <Col xs={6} md={4} tag="aside" className="Card__Col pb-5 mb-5 pb-md-0 mb-md-0 mx-auto mx-md-0">

@@ -18,11 +18,17 @@ describe('<SideCard />', function() {
         card : card
     };
 
+    it('renders <SideCard /> if required props not available', () => {
+        let wrapper = mount(<SideCard />);
+
+        expect(wrapper.exists()).to.equal(true);
+    });
+
     it('renders <SideCard /> with required props', () => {
         let wrapper = mount(<SideCard {...defaultProps} />),
             cardHeaderProps = wrapper.find('.Card__Col');
 
-        //onsole.log( cardHeaderProps.debug());
+        //console.log( cardHeaderProps.debug());
         expect(cardHeaderProps.find('Card').exists()).to.equal(true);
     });
 
