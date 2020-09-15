@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col } from 'reactstrap';
 import LinesEllipsisLoose from 'react-lines-ellipsis/lib/loose';
 import { Card, CardImg, CardBody, CardFooter, CardTitle, CardSubtitle } from 'reactstrap';
+import moment from 'moment';
 
 class SideCard extends Component {
 
@@ -11,7 +12,7 @@ class SideCard extends Component {
         let { author, description, publishedAt, title, urlToImage, source} = card;
         return(
             <Col xs={6} md={4} tag="aside" className="Card__Col pb-5 mb-5 pb-md-0 mb-md-0 mx-auto mx-md-0">
-                <a href="/article/1234" style={{ cursor: 'pointer' }}>
+                <a href="/article/1234" style={{ textDecoration: 'none' }}>
                 <Card>
                 <CardImg top width="100%" src={urlToImage} alt="banner" style={{ height: '15em', background: '#ccc' }} />
                 <CardBody>
@@ -20,7 +21,7 @@ class SideCard extends Component {
                     <LinesEllipsisLoose className="text-secondary mb-4" style={{ fontSize: '0.75rem' }} text={description} maxLine='3' ellipsis='...' lineHeight='16' />    
                 </CardBody>
                 <CardFooter>
-                <small className="text-muted">{publishedAt}</small>
+                <small className="text-muted">Published on {moment.utc(publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</small>
                 </CardFooter>
                 </Card>
                 </a>
