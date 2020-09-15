@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
+import { Container } from 'reactstrap';
 import axios from 'axios';
 import constant from '../constants';
-import Article from './Article'
+import Article from './Article';
+import Header from '../Header';
 
 class Post extends Component {
 
@@ -23,8 +25,8 @@ class Post extends Component {
     let articleDOM = [];
     let articles = posts.status === 'ok' ? posts.articles : [];
     
-    let article0 = articles[0];
-
+    let article0 = articles[1];
+    console.log('article0====',article0)
     articleDOM.push(<Article key="test1" data={article0} />)
     return articleDOM;
 }
@@ -33,10 +35,12 @@ class Post extends Component {
     
     return (
       <Fragment>
+        <Header type="home" styleFont="#05abea"/>
+        <Container className="px-0">
         { this.state.post && 
           this.getArticle(this.state.post)
         }
-       
+       </Container>
       </Fragment>
     );
   }
